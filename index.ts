@@ -1,11 +1,13 @@
-import readline from 'readline-sync';
 import User from './classes/user';
 import menu from './features/menu';
-import initFirstUser from './features/initFirstUser';
-import initSecondUser from './features/initSecondUser';
+import initFirstUser from './features/utils/initFirstUser';
+import initSecondUser from './features/utils/initSecondUser';
 import startGame from './features/startGame';
+import endGame from './features/endGame';
+import Piece from './classes/piece';
+import game from './features/game';
 
-let firstUser: User, secondUser: User, gameOver = false;
+let firstUser: User, secondUser: User, gamePieces:Piece[], gameOver = false, gameWinner: User;
 
 
 while (gameOver) {
@@ -13,7 +15,9 @@ while (gameOver) {
 		case 1: 
 			initFirstUser(firstUser);
 			initSecondUser(secondUser);
-			startGame(firstUser, secondUser); 
+			const gamePieces = startGame(firstUser, secondUser);
+			gameWinner = game(firstUser, secondUser, gamePieces);
+			endGame(gameWinner); 
 			break;
 		case 2:
 			gameOver = true;
