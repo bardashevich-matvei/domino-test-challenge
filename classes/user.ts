@@ -7,6 +7,7 @@ class User {
 
 	constructor (name: string) {
 		this.name = name;
+		this.pieces = [];
 		this.hasNoMoves = false;
 	};
 

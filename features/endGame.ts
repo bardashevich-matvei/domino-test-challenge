@@ -1,5 +1,4 @@
 import User from "../classes/user";
-import readline from 'readline-sync';
 
 function gameEnd (winner: User) {
 	console.clear();

@@ -1,4 +1,4 @@
-import readline from 'readline-sync';
+import * as readline from 'readline-sync';
 
 function menu(): number {
 	console.log('1: start the game');

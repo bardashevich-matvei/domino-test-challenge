@@ -7,20 +7,20 @@ import endGame from './features/endGame';
 import Piece from './classes/piece';
 import game from './features/game';
 
-let firstUser: User, secondUser: User, gamePieces:Piece[], gameOver = false, gameWinner: User;
+let firstUser: User, secondUser: User, gamePieces:Piece[], gameOver = true, gameWinner: User;
 
 
 while (gameOver) {
 	switch(menu()) {
 		case 1: 
-			initFirstUser(firstUser);
-			initSecondUser(secondUser);
+			firstUser = initFirstUser();
+			secondUser = initSecondUser();
 			const gamePieces = startGame(firstUser, secondUser);
 			gameWinner = game(firstUser, secondUser, gamePieces);
 			endGame(gameWinner); 
 			break;
 		case 2:
-			gameOver = true;
+			gameOver = false;
 			break;
 	};
 };
