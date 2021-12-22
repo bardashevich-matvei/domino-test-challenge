@@ -5,11 +5,11 @@ class Piece {
 	numberTwo: number;
 	owner: string;
 
-	constructor (first: number, second: number, owner: string) {
+	constructor (first: number, second: number) {
 		this.numberOne = first;
 		this.numberTwo = second;
-		this.owner = owner ? owner : NO_OWNER;
-	}
+		this.owner = NO_OWNER;
+	};
 }
 
 export default Piece;

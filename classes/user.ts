@@ -3,11 +3,13 @@ import Piece from './piece';
 class User {
 	name: string;
 	pieces: Piece[];
+	hasNoMoves: boolean;
 
-	constructor (name: string, pieces: Piece[]) {
+	constructor (name: string) {
 		this.name = name;
-		this.pieces = pieces;
-	}
+		this.hasNoMoves = false;
+	};
+
 }
 
 export default User;
