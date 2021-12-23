@@ -1,9 +1,9 @@
 import User from "../../classes/user";
 
-function swap(firstUser: User, secondUser: User) {
-	const tmp = firstUser;
-	firstUser = secondUser;
-	secondUser = tmp;
+function swap(item1: any, item2: any) {
+	const tmp = item1;
+	item1 = item2;
+	item2 = tmp;
 }
 
 export default swap;

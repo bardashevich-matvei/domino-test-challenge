@@ -10,9 +10,12 @@ function game(firstUser: User, secondUser: User, gamePieces: Piece[]): User {
 }
 
 function continueGame(firstUser: User, secondUser: User, gamePieces: Piece[], gameOver: boolean):User {
+	let boardPieces: Piece[];
+	boardPieces = [];
+	
 	while (gameOver) {
-		turn(gamePieces, firstUser);
-		turn(gamePieces, secondUser);
+		turn(gamePieces, firstUser, boardPieces);
+		turn(gamePieces, secondUser, boardPieces);
 		checkGameOver(firstUser, secondUser, gamePieces, gameOver);
 	}
 	return checkGameOver(firstUser, secondUser, gamePieces, gameOver);

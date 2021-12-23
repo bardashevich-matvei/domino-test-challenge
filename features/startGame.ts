@@ -8,13 +8,13 @@ import Piece from "../classes/piece";
 function startGame(firstUser: User, secondUser: User):Piece[] {
 	const gamePieces = initPieces();
 	
-	piecesForUser(gamePieces, firstUser);
-	piecesForUser(gamePieces, secondUser);
+	const clonePieces = piecesForUser(gamePieces, firstUser, []);
+	piecesForUser(gamePieces, secondUser, clonePieces);
 	if (whoStarted(firstUser, secondUser)) {
 		swap(firstUser, secondUser);
 	}
 
-	return gamePieces;
+	return clonePieces;
 };
 
 export default startGame;
