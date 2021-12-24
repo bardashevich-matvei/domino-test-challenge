@@ -4,17 +4,19 @@ import swap from './utils/swap';
 import piecesForUser from "./utils/piecesForUser";
 import whoStarted from "./utils/whoStarted";
 import Piece from "../classes/piece";
+import Pieces from "../classes/pieces";
 
-function startGame(firstUser: User, secondUser: User):Piece[] {
+function startGame(firstUser: User, secondUser: User):Pieces {
 	const gamePieces = initPieces();
 	
-	const clonePieces = piecesForUser(gamePieces, firstUser, []);
-	piecesForUser(gamePieces, secondUser, clonePieces);
+	let clonePieces = piecesForUser(gamePieces, firstUser, []);
+	clonePieces = piecesForUser(gamePieces, secondUser, clonePieces);
+	
 	if (whoStarted(firstUser, secondUser)) {
 		swap(firstUser, secondUser);
 	}
 
-	return clonePieces;
+	return new Pieces(clonePieces);
 };
 
 export default startGame;

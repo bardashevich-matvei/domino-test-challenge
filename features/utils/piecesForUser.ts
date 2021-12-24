@@ -11,12 +11,10 @@ function piecesForUser(gamePieces: Piece[], user: User, clonePieces: Piece[]): P
 	} 
 	
 	do {
-		randomNumber = getRandomIntInclusive(0, values.atAll)
-		if (clonePieces[randomNumber].owner === NO_OWNER) {
-			gamePieces[randomNumber].owner = user.name;
-			user.pieces.push(gamePieces[randomNumber]);
-			clonePieces = clonePieces.filter((item, index) => index !== randomNumber);
-		}
+		randomNumber = getRandomIntInclusive(0, clonePieces.length-1);
+		user.pieces.push(clonePieces[randomNumber]);
+		clonePieces = clonePieces.filter((item, index) => index !== randomNumber);
+		
 	} while (user.pieces.length < values.forEach);
 
 	return clonePieces;

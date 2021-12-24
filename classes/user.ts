@@ -11,6 +11,10 @@ class User {
 		this.hasNoMoves = false;
 	};
 
+
+	addPiece (piece: Piece) {
+		this.pieces.push(piece);
+	}
 }
 
 export default User;
