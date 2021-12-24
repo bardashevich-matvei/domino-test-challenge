@@ -7,12 +7,9 @@ import Pieces from "../../classes/pieces";
 import checkCoincidences from "./checkСoincidences";
 
 function turn(gamePieces: Pieces, user: User, boardPieces: Piece[]) {
-	let stringFormat: string;
-
+	let pieceNumber: number, direction: string, endOfTurn = true, stringFormat: string;
 	console.clear();
 	
-	let pieceNumber: number, direction: string, endOfTurn = true;
-
 	do {
 		do {
 			console.clear();

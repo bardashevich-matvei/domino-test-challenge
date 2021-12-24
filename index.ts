@@ -14,7 +14,7 @@ while (gameOver) {
 	switch(menu()) {
 		case 1: 
 			firstUser = initFirstUser();
-			secondUser = initSecondUser();
+			secondUser = initSecondUser(firstUser);
 			const gamePieces = startGame(firstUser, secondUser);
 			gameWinner = game(firstUser, secondUser, gamePieces);
 			endGame(gameWinner); 

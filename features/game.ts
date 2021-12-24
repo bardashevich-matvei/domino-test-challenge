@@ -18,12 +18,12 @@ function continueGame(firstUser: User, secondUser: User, gamePieces: Pieces, gam
 	while (gameOver) {
 		turn(gamePieces, firstUser, boardPieces);
 		if (checkGameOver(firstUser, gamePieces)) {
-			gameOver = false
+			gameOver = false;
 			break;
 		}
 		turn(gamePieces, secondUser, boardPieces);
 		if (checkGameOver(secondUser, gamePieces)) {
-			gameOver = false
+			gameOver = false;
 			break;
 		}
 	}
